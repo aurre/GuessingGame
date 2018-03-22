@@ -13,5 +13,6 @@ Contributions are more than welcome, please follow the guidelines:
 
 -Relax and enjoy
 
-###Author
+#Author
+
 Raysa Aurrecochea
