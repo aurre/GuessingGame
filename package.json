@@ -1,0 +1,26 @@
+{
+  "name": "guessinggame",
+  "version": "1.0.0",
+  "description": "Guessing Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aurre/GuessingGame.git"
+  },
+  "keywords": [
+    "game",
+    "fsa"
+  ],
+  "author": "Raysa Aurrecochea",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aurre/GuessingGame/issues"
+  },
+  "homepage": "https://github.com/aurre/GuessingGame#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
