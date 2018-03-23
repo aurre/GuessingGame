@@ -6,8 +6,11 @@ Contributions are more than welcome, please follow the guidelines:
 
 
 -Create a new branch out of master 
+
 -Work on your branch
+
 -Open a new Merge Request from your branch into master
+
 -Relax and enjoy
 
 ###Author
