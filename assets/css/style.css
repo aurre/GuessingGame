@@ -56,7 +56,8 @@ input::-webkit-input-placeholder {
     display: flex;
     justify-content: space-evenly;
 }
- li {
+
+li {
     display: inline;
   
 }
@@ -66,7 +67,16 @@ input::-webkit-input-placeholder {
     font-size: 60px;
     margin: 10px 20px;
     background-color: white;
+    width: 80px;
+    height: 80px;
+    text-align: center;
 }
+.btn {
+  color: #e2316a!important;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px!important;
+}
+
 
 .center {
 text-align: center;
@@ -76,8 +86,7 @@ ul {
     padding: 0;
 }
 img {
-    width: 200px;
-    height: 100px;
+    max-width: 250px;
 }
 #footer {
     width: 100%;
@@ -89,8 +98,10 @@ img {
 .wrapper {
     display: flex;    
     justify-content: space-evenly;
+    align-items: baseline;
     width: 100%;
 }
 h4 {
     font-size: 1.5em;
+    font-weight: 900;
 }
