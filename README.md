@@ -1,7 +1,7 @@
 # GuessingGame
 This a fun game project to learn, preactice and enhance my skills enhance my skills with HTML, CSS, JavaScript and Jquery. 
 
-###Contribuiting
+#Contribuiting
 Contributions are more than welcome, please follow the guidelines:
 
 
@@ -13,5 +13,6 @@ Contributions are more than welcome, please follow the guidelines:
 
 -Relax and enjoy
 
-###Author
+#Author
+
 Raysa Aurrecochea
