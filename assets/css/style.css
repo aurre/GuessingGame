@@ -30,6 +30,9 @@ input::-webkit-input-placeholder {
     font-weight: bold;
     text-align: center;
 }
+input:focus {
+    outline: none;
+}
 #input-parent {
     position: relative;
     width: 160px;
