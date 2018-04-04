@@ -43,28 +43,38 @@ Game.prototype.isLower = function() {
 Game.prototype.checkGuess = function() {
 
     if (this.playersGuess === this.winningNumber) {
+        $('#submit, #hint').prop('disabled', true);
+        $('h2').text('Reset the game to play again');
         return 'You Win!'
     }
-    else if(this.pastGuesses.indexOf(this.playersGuess) > -1) {
-            return 'You have already guessed that number.';
+    else if (this.pastGuesses.indexOf(this.playersGuess) > -1) {
+            $('h1').text('You have already guessed that number. Try again!')
+            return 'You have already guessed that number';
         }
         else {
             this.pastGuesses.push(this.playersGuess);
-            if(this.pastGuesses.length === 5) {
-                return 'You Lose.';
+            $('#guesses li:nth-child(' + this.pastGuesses.length + ')').text(this.playersGuess)
+            if (this.pastGuesses.length === 5) {
+                $('#submit, #hint').prop('disabled', true);
+                $('h2').text('Reset the game to play again');
+                return 'You Lose!';
             }
             else {
                 var diff = this.difference();
-                if(diff < 10) return'You\'re burning up!';
-                else if(diff < 25) return'You\'re lukewarm.';
-                else if(diff < 50) return'You\'re a bit chilly.';
-                else return'You\'re ice cold!';
+                if (diff.isLower) {
+                    $('h2').text('Guess higher!');
+                } else {
+                    $('h2').text('Guess lower!')
+                }
+                if (diff < 10) return 'You\'re burning up!';
+                else if (diff < 25) return 'You\'re lukewarm.';
+                else if (diff < 50) return 'You\'re a bit chilly.';
+                else return 'You\'re ice cold!';
             }
         }
 }
 Game.prototype.playersGuessSubmission = function(num) {
     this.playersGuess = num
-    var hasBeenCalled = 0;
 
     if (this.playersGuess <= 0 || this.playersGuess >= 100 || typeof this.playersGuess !== 'number') {
         throw 'That is an invalid guess.'
@@ -79,5 +89,48 @@ function newGame() {
 
 Game.prototype.provideHint = function() {
     var newArr = [this.winningNumber, generateWinningNumber(), generateWinningNumber()]
+    var stringOfHints = newArr.toString();
+    $('h1').text(stringOfHints);
     return shuffle(newArr);
 }
+
+function makeAGuess(game) {
+    var inputNumber = +$('#player-input').val();
+    $('#player-input').val('');
+    var value = game.playersGuessSubmission(inputNumber);
+
+    console.log(value);
+    return value;
+}
+
+
+$(document).ready(function() {
+    var game = newGame();
+
+    $('#submit').on('click', function() {
+        makeAGuess(game);
+        
+
+    });
+
+    $('#player-input').on('keydown', function(event) {
+        if (event.which === 13) {
+            makeAGuess(game);
+            
+        }
+    });
+
+
+    var originalState = $('#guesses').clone();
+    var originalState1 = $('#headers').clone();
+    $('#reset').on('click', function() {
+        game = newGame();
+        $('#submit, #hint').prop('disabled', false);
+        $('#guesses').replaceWith(originalState);
+        $('#headers').replaceWith(originalState1);
+    });
+
+    $('#hint').on('click', function(){
+        game.provideHint();
+    });
+});
