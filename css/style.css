@@ -1,6 +1,7 @@
 body {
     background-image: url("../images/background4.jpg");
-    background-size:cover;
+    background-size: cover;
+    max-height: fit-content;
     margin: 0;
     padding: 0;
 }
@@ -60,7 +61,7 @@ input:focus {
 
 #guesses {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 li {
@@ -105,6 +106,7 @@ img {
     display: flex;    
     justify-content: space-evenly;
     align-items: baseline;
+    flex-wrap: wrap;
     width: 100%;
 }
 h4 {

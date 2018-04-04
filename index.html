@@ -6,31 +6,33 @@
   <title>Guessing Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="./images/window_icon.png">
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   
   
 </head>
 <body>
-    <div id='app'class="container-fluid">
+    <div id='app'class="container">
 
-        <div id='headers'>
+        <div id='headers' class="row">
           <!-- Title and subtitles! -->
-          <h1>Play the Guessing Game!</h1>
-          <h2>Guess a number between 1-100!</h2>
+          <div class="col-xs-12">
+            <h1>Play the Guessing Game!</h1>
+            <h2>Guess a number between 1-100!</h2>
+          </div>
         </div>
 
-        <div id='main'>
+        <div id='main' class="row">
             <!-- Player's guess input, and submit button -->
-              <div id="input-parent" style="text-align:center;">
+              <div id="input-parent" class="col-xs-12" style="text-align:center;">
                 <input id="player-input" class="center" placeholder="#" maxlength="3" autofocus="autofocus">
                 <button id="submit">Go!</button>
               </div><!-- /input-group -->
           </div>
 
           
-          <div id='guesses'>
+          <div id='guesses' class="container">
             <!-- unordered list of guesses -->
             <ul class="list-inline">
               <li class="list-inline-item">?</li>
@@ -69,7 +71,6 @@
     </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
   <script src="./js/GuessingGame_solution.js"></script> 
 </body>
 </html>

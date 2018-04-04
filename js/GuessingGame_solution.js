@@ -44,6 +44,7 @@ Game.prototype.checkGuess = function() {
 
     if (this.playersGuess === this.winningNumber) {
         $('#submit, #hint').prop('disabled', true);
+        $('h1').text('You Win!');
         $('h2').text('Reset the game to play again');
         return 'You Win!'
     }
@@ -56,6 +57,7 @@ Game.prototype.checkGuess = function() {
             $('#guesses li:nth-child(' + this.pastGuesses.length + ')').text(this.playersGuess)
             if (this.pastGuesses.length === 5) {
                 $('#submit, #hint').prop('disabled', true);
+                $('h1').text('Sorry, You Lose!')
                 $('h2').text('Reset the game to play again');
                 return 'You Lose!';
             }
@@ -89,8 +91,6 @@ function newGame() {
 
 Game.prototype.provideHint = function() {
     var newArr = [this.winningNumber, generateWinningNumber(), generateWinningNumber()]
-    var stringOfHints = newArr.toString();
-    $('h1').text(stringOfHints);
     return shuffle(newArr);
 }
 
@@ -109,28 +109,28 @@ $(document).ready(function() {
 
     $('#submit').on('click', function() {
         makeAGuess(game);
-        
+
 
     });
 
     $('#player-input').on('keydown', function(event) {
         if (event.which === 13) {
             makeAGuess(game);
-            
+
         }
     });
 
 
-    var originalState = $('#guesses').clone();
-    var originalState1 = $('#headers').clone();
     $('#reset').on('click', function() {
         game = newGame();
+        $('#guesses li').text('?');
+        $('h1').text('Play the Guessing Game!');
+        $('h2').text('Guess a number between 1-100!');
         $('#submit, #hint').prop('disabled', false);
-        $('#guesses').replaceWith(originalState);
-        $('#headers').replaceWith(originalState1);
     });
 
     $('#hint').on('click', function(){
-        game.provideHint();
+       var hints =  game.provideHint();
+       $('h1').text('The winning number is: ' + hints[0] + ' , ' + hints[1] + ' or ' + hints[2]);
     });
 });
