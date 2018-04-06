@@ -63,7 +63,7 @@ Game.prototype.checkGuess = function() {
             }
             else {
                 var diff = this.difference();
-                if (diff.isLower) {
+                if (this.isLower()) {
                     $('h2').text('Guess higher!');
                 } else {
                     $('h2').text('Guess lower!')
