@@ -1,7 +1,7 @@
 body {
     background-image: url("../images/background4.jpg");
     background-size: cover;
-    max-height: fit-content;
+    background-repeat: repeat-y;
     margin: 0;
     padding: 0;
 }

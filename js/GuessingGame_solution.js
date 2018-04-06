@@ -78,8 +78,13 @@ Game.prototype.checkGuess = function() {
 Game.prototype.playersGuessSubmission = function(num) {
     this.playersGuess = num
 
-    if (this.playersGuess <= 0 || this.playersGuess >= 100 || typeof this.playersGuess !== 'number') {
-        throw 'That is an invalid guess.'
+    if (this.playersGuess <= 0 || this.playersGuess >= 100 ) {
+        alert('Invalid input, try again');
+        throw new Error('That is an invalid guess.');
+    }
+    if (isNaN(this.playersGuess)) {
+        alert('Please enter a number');
+        throw new Error('That is an invalid guess.');
     }
 
     return Game.prototype.checkGuess.call(this, num)
