@@ -1,7 +1,7 @@
 # GuessingGame
 This a fun game project to learn, preactice and enhance my skills with HTML, CSS, JavaScript and Jquery.
 
-https://aurre.github.io/Random-Quote-Machine/ 
+https://aurre.github.io/GuessingGame/
 
 # Contribuiting
 Contributions are more than welcome, please follow the guidelines:
